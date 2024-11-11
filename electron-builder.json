@@ -1,0 +1,15 @@
+{
+  "appId": "com.anothay.cinephoria",
+  "files": ["dist-electron", "dist-react"],
+  "icon": "./cinephoria_logo.png",
+  "mac": {
+    "target": "dmg"
+  },
+  "linux": {
+    "target": "AppImage",
+    "category": "Utility"
+  },
+  "win": {
+    "target": ["portable", "msi"]
+  }
+}
