@@ -1,5 +1,9 @@
 {
   "name": "cinephoria_desktop",
+  "description": "Studi ECF",
+  "author": {
+    "name": "Jérémy Sananikone"
+  },
   "private": true,
   "version": "0.0.0",
   "type": "module",
