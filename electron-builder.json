@@ -1,6 +1,7 @@
 {
   "appId": "com.anothay.cinephoria",
   "files": ["dist-electron", "dist-react"],
+  "extraResources": ["dist-electron/preload.cjs"],
   "icon": "./cinephoria_logo.png",
   "mac": {
     "target": "dmg"
