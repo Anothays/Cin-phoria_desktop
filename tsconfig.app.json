@@ -21,7 +21,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "types": ["./types"]
+    "types": ["./types"],
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "include": ["src"]
 }
