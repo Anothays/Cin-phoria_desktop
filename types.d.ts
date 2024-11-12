@@ -1,15 +1,17 @@
-type Statistics = {
-  data: string;
-};
 
 
 type EventPayloadMapping = {
-  statistic: Statistics
+  saveToken: string;
+  getToken: string;
+  removeToken: void;
 };
 
 interface Window {
-  electron: {
-    getStaticData: () => void;
-  }
+  electron: object,
+  auth: {
+    saveToken: (token: string) => void;
+    getToken: () => Promise<string>;
+    removeToken: () => void;
+  },
 };
 
