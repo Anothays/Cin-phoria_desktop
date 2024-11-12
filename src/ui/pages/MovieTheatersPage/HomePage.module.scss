@@ -1,0 +1,24 @@
+@import "/src/ui/styles/_colors.module";
+@import "/src/ui/styles//variables.module";
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  // background-color: lightpink;
+  .title {
+    // color: green;
+  }
+  .theaterList {
+    width: 100%;
+    max-width: 1200px;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: $space-md;
+  }
+}

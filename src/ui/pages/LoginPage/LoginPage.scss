@@ -1,9 +1,5 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+@import "/src/ui/styles/_colors.module";
+@import "/src/ui/styles//variables.module";
 
 .logo {
   height: 6em;
@@ -38,10 +34,6 @@
   max-width: 450px;
 }
 
-.card {
-  padding: 1em;
-}
-
 .loginForm {
   display: flex;
   flex-direction: column;
@@ -51,8 +43,28 @@
 
 .loginForm > input {
   padding: 1rem;
+  color: white;
+}
+
+.submitButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .read-the-docs {
-  color: #888;
+  color: $primary-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: $primary-color;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
 }

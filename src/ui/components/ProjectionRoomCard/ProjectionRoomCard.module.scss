@@ -1,0 +1,17 @@
+@import "/src/ui/styles/_colors.module";
+@import "/src/ui/styles/_variables.module";
+
+.container {
+  display: block;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: 2px grey solid;
+  transition: 0.2s;
+  &:hover {
+    background-color: transparent;
+    opacity: 50%;
+    cursor: pointer;
+  }
+}
