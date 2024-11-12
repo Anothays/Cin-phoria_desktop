@@ -1,30 +1,31 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
-import reactLogo from "./assets/react.svg";
+import cinephoriaLogo from "./assets/cinephoria_logo.png";
+import LoginForm from "./components/LoginForm";
 
 function App() {
-  const [count, setCount] = useState(0);
+  useEffect(() => {
+    // window.electron.getStaticData();
+    fetch("https://cinephoria.jeremysnnk.ovh/api/movies")
+      .then((res) => res.json())
+      .then((res) => console.log(res))
+      .catch((err) => console.error(err));
+  }, []);
 
   return (
-    <>
+    <div className="page">
       <div>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a href="https://cinephoria.jeremysnnk.ovh/admin" target="_blank">
+          <img
+            src={cinephoriaLogo}
+            className="logo react"
+            alt="cinephoria logo"
+          />
         </a>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <h1>Cinéphoria</h1>
+      <LoginForm />
+    </div>
   );
 }
 
