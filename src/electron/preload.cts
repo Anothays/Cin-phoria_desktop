@@ -2,9 +2,13 @@
 const electron = require('electron');
 
 electron.contextBridge.exposeInMainWorld("electron", {
-  getStaticData: () => { },
 } satisfies Window['electron']);
 
+electron.contextBridge.exposeInMainWorld("auth", {
+  saveToken: (token) => ipcSend('saveToken', token),
+  getToken: () => ipcInvoke('getToken'),
+  removeToken: () => ipcInvoke('removeToken'),
+} satisfies Window['auth']);
 
 
 
@@ -16,16 +20,21 @@ function ipcInvoke<Key extends keyof EventPayloadMapping>(key: Key): Promise<Eve
 }
 
 
-
-
 /**
  * @description Wrapper around electron.ipcRenderer.on function in order to make ipc operations typesafe
  */
-function ipcOn<Key extends keyof EventPayloadMapping>(
+// function ipcOn<Key extends keyof EventPayloadMapping>(
+//   key: Key,
+//   callback: (payload: EventPayloadMapping[Key]) => void
+// ) {
+//   const cb = (_: Electron.IpcRendererEvent, payload: any) => callback(payload);
+//   electron.ipcRenderer.on(key, cb);
+//   return () => electron.ipcRenderer.off(key, cb);
+// }
+
+function ipcSend<Key extends keyof EventPayloadMapping>(
   key: Key,
-  callback: (payload: EventPayloadMapping[Key]) => void
+  payload: EventPayloadMapping[Key]
 ) {
-  const cb = (_: Electron.IpcRendererEvent, payload: any) => callback(payload);
-  electron.ipcRenderer.on(key, cb);
-  return () => electron.ipcRenderer.off(key, cb);
+  electron.ipcRenderer.send(key, payload);
 }
