@@ -30,16 +30,16 @@ export const AuthProvider = ({ children }: any) => {
   });
 
   // A REVOIR ?
-  const register = async (email: string, password: string) => {
-    try {
-      return await axios.post(`${process.env.API_BASE_URL}/api/users`, {
-        email,
-        password,
-      });
-    } catch (error) {
-      return { error: true, message: error };
-    }
-  };
+  // const register = async (email: string, password: string) => {
+  //   try {
+  //     return await axios.post(`${process.env.API_BASE_URL}/api/users`, {
+  //       email,
+  //       password,
+  //     });
+  //   } catch (error) {
+  //     return { error: true, message: error };
+  //   }
+  // };
 
   const login = async (email: string, password: string) => {
     try {
