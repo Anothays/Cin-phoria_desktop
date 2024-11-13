@@ -1,0 +1,20 @@
+@import "/src/ui/styles/_colors.module";
+@import "/src/ui/styles//variables.module";
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2em;
+
+  input {
+    padding: 1rem;
+    color: white;
+  }
+
+  .submitButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

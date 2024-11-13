@@ -14,11 +14,11 @@ export default function MovieTheaterPage() {
     console.log("movieTheater ==> ", movieTheater);
 
     return (
-      <div>
+      <>
         <h1>
           {movieTheater.theaterName} - {movieTheater?.city}{" "}
         </h1>
-        <div className={styles.container}>
+        <div className={styles.projectionRoomList}>
           {movieTheater.projectionRooms.map((projectionRoom) => (
             <ProjectionRoomCard
               projectionRoom={projectionRoom}
@@ -26,7 +26,7 @@ export default function MovieTheaterPage() {
             />
           ))}
         </div>
-      </div>
+      </>
     );
   }
 }

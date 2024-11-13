@@ -2,6 +2,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../Context/AuthContext";
+import styles from "./LoginForm.module.scss";
 
 export default function LoginForm() {
   const { onLogin } = useAuth();
@@ -36,10 +37,10 @@ export default function LoginForm() {
   };
 
   return (
-    <form className="loginForm" onSubmit={handleClick}>
+    <form className={styles.loginForm} onSubmit={handleClick}>
       <input name="email" type="email" placeholder="Email" />
       <input name="password" type="password" placeholder="Mot de passe" />
-      <button className="submitButton" type="submit">
+      <button className={styles.submitButton} type="submit">
         {isLoading ? <CircularProgress size={19} /> : "Connexion"}
       </button>
     </form>

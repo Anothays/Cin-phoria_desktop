@@ -1,0 +1,29 @@
+@import "/src/ui/styles/_colors.module";
+@import "/src/ui/styles//variables.module";
+
+.container {
+  margin-inline: auto;
+  margin-top: 10rem;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-width: 350px;
+  max-width: 450px;
+  text-align: center;
+
+  .logoContainer {
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+    &:hover {
+      filter: drop-shadow(0 0 2em #646cffaa);
+    }
+
+    .logoImage {
+      max-width: 120px;
+      height: auto;
+    }
+  }
+}
