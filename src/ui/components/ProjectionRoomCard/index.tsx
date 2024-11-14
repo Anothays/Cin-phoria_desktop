@@ -10,7 +10,7 @@ export default function ProjectionRoomCard({
   return (
     <NavLink to={`${projectionRoom.id}`}>
       <div className={styles.container}>
-        <p>{projectionRoom.titleRoom}</p>
+        <p>Salle {projectionRoom.titleRoom}</p>
       </div>
     </NavLink>
   );

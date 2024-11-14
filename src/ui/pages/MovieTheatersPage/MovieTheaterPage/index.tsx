@@ -11,13 +11,12 @@ export default function MovieTheaterPage() {
   if (isLoading) return <CircularProgress />;
 
   if (movieTheater) {
-    console.log("movieTheater ==> ", movieTheater);
-
     return (
       <>
         <h1>
           {movieTheater.theaterName} - {movieTheater?.city}{" "}
         </h1>
+        <h2>Les salles</h2>
         <div className={styles.projectionRoomList}>
           {movieTheater.projectionRooms.map((projectionRoom) => (
             <ProjectionRoomCard

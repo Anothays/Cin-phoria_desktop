@@ -11,7 +11,6 @@ interface AuthState {
 
 interface AuthProps {
   authState?: AuthState;
-  onRegister?: (email: string, password: string) => Promise<any>;
   onLogin?: (email: string, password: string) => Promise<any>;
   onLogout?: () => Promise<any>;
 }
@@ -29,23 +28,11 @@ export const AuthProvider = ({ children }: any) => {
     user: null,
   });
 
-  // A REVOIR ?
-  // const register = async (email: string, password: string) => {
-  //   try {
-  //     return await axios.post(`${process.env.API_BASE_URL}/api/users`, {
-  //       email,
-  //       password,
-  //     });
-  //   } catch (error) {
-  //     return { error: true, message: error };
-  //   }
-  // };
-
   const login = async (email: string, password: string) => {
     try {
       axios.defaults.headers.common["Content-Type"] = "application/json";
       const response = await axios.post(
-        `${process.env.API_BASE_URL}/api/login_check`,
+        `${process.env.API_BASE_URL}/api/staff/login_check`,
         { username: email, password }
       );
 
@@ -86,7 +73,6 @@ export const AuthProvider = ({ children }: any) => {
   };
 
   const value = {
-    onRegister: register,
     onLogin: login,
     onLogout: logout,
     authState,

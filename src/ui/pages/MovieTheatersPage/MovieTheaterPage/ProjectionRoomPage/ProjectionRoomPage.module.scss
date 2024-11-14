@@ -1,0 +1,17 @@
+@import "/src/ui/styles/_colors.module.scss";
+@import "/src/ui/styles/_variables.module.scss";
+
+.page {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .pageContent {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: $space-md;
+  }
+}

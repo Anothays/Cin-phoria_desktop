@@ -1,20 +1,27 @@
-@import "/src/ui/styles/_colors.module.scss";
 @import "/src/ui/styles/_variables.module.scss";
+@import "/src/ui/styles/_colors.module.scss";
 
-.loginForm {
+.container {
   display: flex;
+  width: 60%;
   flex-direction: column;
   gap: 1rem;
-  padding: 2em;
+  // padding: $space-md;
 
   input {
     padding: 1rem;
     color: white;
   }
 
+  .textarea {
+    min-height: 200px;
+    padding: $space-md;
+  }
+
   .submitButton {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 200px;
   }
 }
