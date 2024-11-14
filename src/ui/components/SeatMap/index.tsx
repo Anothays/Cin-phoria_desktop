@@ -1,6 +1,7 @@
 import { ProjectionRoomSeatType } from "@/types/ProjectionRoomSeatType";
 import { ProjectionRoomType } from "@/types/ProjectionRoomType";
 import Seat from "./Seat";
+import styles from "./SeatMap.module.scss";
 
 export default function SeatMap({
   projectionRoom,
@@ -22,7 +23,7 @@ export default function SeatMap({
   });
 
   return (
-    <table>
+    <table className={styles.container}>
       <tbody>
         {Object.keys(allSeatsOrdered).map((seatRow) => (
           <tr key={seatRow}>

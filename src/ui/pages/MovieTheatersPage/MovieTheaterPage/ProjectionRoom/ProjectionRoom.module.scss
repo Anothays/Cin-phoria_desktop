@@ -1,0 +1,8 @@
+@import "/src/ui/styles/_colors.module.scss";
+@import "/src/ui/styles/_variables.module.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

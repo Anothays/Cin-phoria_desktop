@@ -12,7 +12,7 @@ export default function MovieTheaterPage() {
 
   if (movieTheater) {
     return (
-      <>
+      <div className={styles.container}>
         <h1>
           {movieTheater.theaterName} - {movieTheater?.city}{" "}
         </h1>
@@ -25,7 +25,7 @@ export default function MovieTheaterPage() {
             />
           ))}
         </div>
-      </>
+      </div>
     );
   }
 }

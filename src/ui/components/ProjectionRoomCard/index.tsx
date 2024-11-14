@@ -8,7 +8,7 @@ export default function ProjectionRoomCard({
   projectionRoom: ProjectionRoomType;
 }) {
   return (
-    <NavLink to={`${projectionRoom.id}`}>
+    <NavLink to={`salle/${projectionRoom.id}/incidents`}>
       <div className={styles.container}>
         <p>Salle {projectionRoom.titleRoom}</p>
       </div>

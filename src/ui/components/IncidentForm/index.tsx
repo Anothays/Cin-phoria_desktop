@@ -17,14 +17,14 @@ export default function IncidentForm({
   const [isLoading, setIsLoading] = useState(false);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log(axios.defaults.headers.common);
     setIsLoading(true);
     const data = new FormData(e.currentTarget);
     const body = {
-      description: `${inputText}
-      ${data.get("description")}`,
+      description: `${data.get("description")}
+      [sièges: ${inputText}]`,
       projectionRoom: projectionRoom["@id"],
     };
-    console.log(body);
 
     try {
       await axios.post(`${process.env.API_BASE_URL}/api/incidents`, body, {
@@ -47,19 +47,19 @@ export default function IncidentForm({
 
   return (
     <form className={styles.container} onSubmit={handleSubmit}>
-      <h2>Signaler un problème</h2>
+      <h2>Décrivez le problème</h2>
+      <textarea
+        name="description"
+        className={styles.textarea}
+        autoFocus
+        placeholder="Votre rapport"
+      />
       <input
         name="seats"
         disabled
         type="text"
         value={inputText}
         placeholder="Sélectionnez les fauteuils concernés sur le plan de la salle"
-      />
-      <textarea
-        name="description"
-        className={styles.textarea}
-        autoFocus
-        placeholder="Votre rapport"
       />
 
       <button className={styles.submitButton} type="submit">

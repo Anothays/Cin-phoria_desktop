@@ -9,13 +9,13 @@ export default function MovieTheatersPage() {
   if (isLoading) return <CircularProgress />;
 
   return (
-    <>
+    <div className={styles.container}>
       <h1 className={styles.title}>Liste des cinémas</h1>
       <div className={styles.theaterList}>
         {movieTheaters.map((theater) => (
           <MovieTheaterCard key={theater.id} movieTheater={theater} />
         ))}
       </div>
-    </>
+    </div>
   );
 }

@@ -1,14 +1,19 @@
 @import "/src/ui/styles/_colors.module.scss";
 @import "/src/ui/styles/_variables.module.scss";
 
-.projectionRoomList {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 200px));
-  gap: $space-md;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  transition: 0.2s;
+.container {
+  display: flex;
+  flex-direction: column;
+
+  .projectionRoomList {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 200px));
+    gap: $space-md;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    transition: 0.2s;
+  }
 }
