@@ -15,7 +15,7 @@ export default function DataTable({ incidents }: DataTableType) {
 
   const onDeleteIncident = async (id: number) => {
     setIsLoading(true);
-    console.log(axios.defaults.headers.common);
+
     try {
       await axios.delete(`${process.env.API_BASE_URL}/api/incidents/${id}`);
       setIncidentState((prev) => {

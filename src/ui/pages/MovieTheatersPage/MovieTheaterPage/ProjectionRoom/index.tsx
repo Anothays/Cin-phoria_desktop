@@ -9,15 +9,14 @@ export default function ProjectionRoom() {
   const { projectionRoom, isLoading } = useProjectionRoom(+roomId!);
 
   if (isLoading) return <CircularProgress />;
-  console.log(projectionRoom);
 
   return (
     <div>
       <div className={styles.header}>
-        <h1>
-          Salle {projectionRoom?.titleRoom} -{" "}
-          {projectionRoom?.projectionRoomSeats.length} places
-        </h1>
+        <div className={styles.headerTitle}>
+          <h1>Salle {projectionRoom?.titleRoom}</h1>
+          <p>{projectionRoom?.projectionRoomSeats.length} places</p>
+        </div>
         <NavLink className="button" to="new" state={{ projectionRoom }}>
           Signaler un problème
         </NavLink>

@@ -5,4 +5,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  .headerTitle {
+    // color: $primary-color;
+    padding: 0;
+    h1,
+    p {
+      margin: 0;
+      text-align: start;
+    }
+  }
 }

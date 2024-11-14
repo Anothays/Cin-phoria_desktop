@@ -3,22 +3,39 @@
 
 .container {
   display: flex;
-  .navbar {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    max-width: 200px;
-    height: 100vh;
-    padding: $space-md;
-    background-color: whitesmoke;
-    padding: 0;
-    margin: 0;
-    border-radius: 0 10px 10px 0;
+  // padding: $space-md;
+  .navbarContainer {
+    // padding: $space-md;
+    .navbar {
+      display: flex;
+      position: sticky;
+      top: 0;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      // max-width: 200px;
+      padding: 0;
+      margin: 0;
+      height: 100vh;
+      border-radius: 0 10px 10px 0;
+      box-shadow: 1px 0px 5px $grey-text-color;
+      text-align: center;
+      // padding: $space-md;
 
-    .navlink {
-      // background-color: red;
-      padding: $space-md;
+      .navlink {
+        // background-color: red;
+      }
+
+      .navbarFooter {
+        color: $grey-text-color;
+        margin-top: auto;
+        // background-color: red;
+      }
+
+      .logoImage {
+        max-width: 60px;
+        height: auto;
+      }
     }
   }
 
