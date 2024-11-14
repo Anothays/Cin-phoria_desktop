@@ -10,7 +10,7 @@ export default function LoginPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (authState?.authenticated) navigate("/home");
+    if (authState?.authenticated) navigate("/movieTheaters");
   }, []);
 
   return (

@@ -1,17 +1,21 @@
 
 
 type EventPayloadMapping = {
-  saveToken: string;
-  getToken: string;
+  saveToken: { token: string, user: string };
+  getToken: Promise<string | null>;
   removeToken: void;
+  getUserInfo: Promise<string | null>;
+  removeUserInfo: void;
 };
 
 interface Window {
   electron: object,
   auth: {
-    saveToken: (token: string) => void;
-    getToken: () => Promise<string>;
+    saveToken: ({ token, user }: { token: string, user: string }) => void;
+    getToken: () => Promise<string | null>;
     removeToken: () => void;
+    getUserInfo: () => Promise<string | null>;
+    removeUserInfo: () => void;
   },
 };
 

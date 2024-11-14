@@ -6,8 +6,10 @@ electron.contextBridge.exposeInMainWorld("electron", {
 
 electron.contextBridge.exposeInMainWorld("auth", {
   saveToken: (token) => ipcSend('saveToken', token),
-  getToken: () => ipcInvoke('getToken'),
+  getToken: async () => ipcInvoke('getToken'),
   removeToken: () => ipcInvoke('removeToken'),
+  getUserInfo: async () => ipcInvoke('getUserInfo'),
+  removeUserInfo: () => ipcInvoke('removeUserInfo')
 } satisfies Window['auth']);
 
 
