@@ -56,8 +56,11 @@
 @media (prefers-color-scheme: light) {
   :root {
     body {
+      nav {
+        background-color: $light-grey-color;
+      }
       color: $grey-text-color;
-      background-color: whitesmoke;
+      background-color: $white-color;
       a:hover {
         color: #747bff;
       }
@@ -74,7 +77,9 @@
 @media (prefers-color-scheme: dark) {
   :root {
     body {
-      // color: $grey-text-color;
+      nav {
+        background-color: $primary-color;
+      }
       background-color: $black-color;
     }
   }

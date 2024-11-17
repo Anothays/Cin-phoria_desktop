@@ -14,7 +14,7 @@ export default function LoginPage() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.page}>
       <div className={styles.logoContainer}>
         <a href="https://cinephoria.jeremysnnk.ovh/admin" target="_blank">
           <img
