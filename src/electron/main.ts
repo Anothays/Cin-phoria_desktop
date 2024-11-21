@@ -24,7 +24,7 @@ app.on("ready", () => {
   }
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   createMenu();
 
